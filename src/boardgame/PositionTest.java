@@ -1,9 +1,7 @@
-package boardgame.test;
+package boardgame;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import boardgame.Position;
 
 public class PositionTest {
 
@@ -18,7 +16,9 @@ public class PositionTest {
 		int row = position.getRow();
 		
 		//Verification
-		Assert.assertTrue(row == 3);
+		Assert.assertEquals( String.valueOf(row), "3");
+//		Assert.assertTrue(row == 3);
+
 	}
 
 	@Test
@@ -32,7 +32,8 @@ public class PositionTest {
 		int row = position.getRow();
 		
 		//Verification
-		Assert.assertTrue(row == 3);
+		Assert.assertEquals(String.valueOf(row), "3");
+
 		
 	}
 
@@ -45,7 +46,7 @@ public class PositionTest {
 		int column = position.getColumn();
 		
 		//Verification
-		Assert.assertTrue(column == 5);
+		Assert.assertEquals(String.valueOf(column), "5");
 	}
 
 	@Test
@@ -58,7 +59,7 @@ public class PositionTest {
 		int column = position.getColumn();
 		
 		//Verification
-		Assert.assertTrue(column == 5);
+		Assert.assertEquals(String.valueOf(column), "5");
 	}
 
 	@Test
@@ -70,7 +71,7 @@ public class PositionTest {
 		String text = position.toString();
 		
 		//Verification
-		Assert.assertTrue(text.equals("3,5"));
+		Assert.assertEquals(text, "3,5");
 		
 		
 	}
