@@ -252,4 +252,47 @@ public class BoardTest {
 		board.thereIsAPiece(position);
 	}	
 	
+	@Test
+	public void testRemovePiece() {
+		//Scenario
+		Board board = new Board(8,8);
+		Piece piece = new Piece(board);
+		Position position = new Position (3,4);
+		piece.setPosition(position);		
+		board.placePiece(piece, position);
+		
+		//Action
+		Piece pieceToBeRemove = board.removePiece(position);
+
+		//Validations		
+		Assert.assertEquals( null, board.piece(position));
+		Assert.assertEquals( piece, pieceToBeRemove);		
+	}
+
+	@Test(expected = BoardException.class)  
+	public void testRemovePiece2() {
+		//Scenario
+		Board board = new Board(8,8);
+		Position position = new Position (-3,4);
+		
+		//Action and Validation
+		board.removePiece(position);
+
+	}
+	
+	@Test  
+	public void testRemovePiece3() {
+		//Scenario
+		Board board = new Board(8,8);
+		Position position = new Position (3,4);
+		
+		//Action 
+		Piece pieceToBeRemove = board.removePiece(position);
+
+		//Validation
+		Assert.assertEquals(null, pieceToBeRemove);
+	}
+
+	
+	
 }

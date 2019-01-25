@@ -75,6 +75,20 @@ public class Board {
 //		return "Board [rows=" + rows + ", columns=" + columns + "]";
 	}
 	
-	
+	public Piece removePiece(Position position) {
+		if ( !positioExists(position) ) {
+			throw new BoardException("Position not on the board");
+		}
+		
+		if (piece(position) == null) {
+			return null;
+		}
+		
+		Piece pieceToBeRemoved = piece(position);
+		pieceToBeRemoved.position = null;
+		pieces[position.getRow()][position.getColumn()] = null;
+		
+		return pieceToBeRemoved;
+	}
 		
 }
