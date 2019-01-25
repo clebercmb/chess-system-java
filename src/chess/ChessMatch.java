@@ -34,10 +34,18 @@ public class ChessMatch {
 		return mat;
 	}
 	
+	private void placeNewPiece(char column, int row, ChessPiece piece) {
+	
+		ChessPosition ver = new ChessPosition(column,row);
+		board.placePiece(piece, ver.toPosition());
+
+		System.out.println(ver + "-" + ver.toPosition() + "==>" + ChessPosition.fromPosition(ver.toPosition()) );
+				
+	}
 	
 	private void initialSetup() {
-		board.placePiece(new Rook(board, Color.WHITE), new Position(2,1));
-		board.placePiece(new King(board, Color.BLACK), new Position(0,4));
-		board.placePiece(new King(board, Color.WHITE), new Position(7,4));
+		placeNewPiece('e', 8, new King(board, Color.BLACK));
+		placeNewPiece('b', 6, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 1, new King(board, Color.WHITE));
 	}
 }
