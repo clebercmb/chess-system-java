@@ -4,6 +4,9 @@ package boardgame;
 import org.junit.Assert;
 import org.junit.Test;
 
+import chess.Color;
+import chess.pieces.King;
+
 public class BoardTest {
 
 	
@@ -51,7 +54,8 @@ public class BoardTest {
 	public void  testPiece() {
 		//Scenario
 		Board board = new Board(8,8);
-		Piece piece = new Piece(board);
+//		Piece piece = new Piece(board);
+		Piece piece = new King(board, Color.WHITE);
 		Position position = new Position (3,4);
 		piece.setPosition(position);		
 		board.placePiece(piece, position);
@@ -68,7 +72,7 @@ public class BoardTest {
 	public void  testPiece2() {
 		//Scenario
 		Board board = new Board(8,8);
-		Piece piece = new Piece(board);
+		Piece piece = new King(board, Color.WHITE);
 		Position position = new Position (3,4);
 		piece.setPosition(position);		
 		board.placePiece(piece, position);
@@ -103,12 +107,12 @@ public class BoardTest {
 	public void  testPlacePiece() {
 		//Scenario
 		Board board = new Board(8,8);
-		Piece piece = new Piece(board);
+		Piece piece = new King(board, Color.WHITE);
 		Position position = new Position (3,4);
 		piece.setPosition(position);		
 		board.placePiece(piece, position);
 
-		Piece piece2 = new Piece(board);
+		Piece piece2 = new King(board, Color.WHITE);
 		Position position2 = new Position (3,4);
 		
 		//Action and Validation
@@ -135,7 +139,7 @@ public class BoardTest {
 	public void  testPositioExists() {
 		//Scenario
 		Board board = new Board(8,8);
-		Piece piece = new Piece(board);
+		Piece piece = new King(board, Color.WHITE);
 		Position position = new Position (3,4);
 		piece.setPosition(position);		
 		board.placePiece(piece, position);
@@ -216,7 +220,7 @@ public class BoardTest {
 	public void  testThereIsAPiece() {
 		//Scenario
 		Board board = new Board(8,8);
-		Piece piece = new Piece(board);
+		Piece piece = new King(board, Color.WHITE);
 		Position position = new Position (3,4);
 		piece.setPosition(position);		
 		board.placePiece(piece, position);
@@ -256,7 +260,7 @@ public class BoardTest {
 	public void testRemovePiece() {
 		//Scenario
 		Board board = new Board(8,8);
-		Piece piece = new Piece(board);
+		Piece piece = new King(board, Color.WHITE);
 		Position position = new Position (3,4);
 		piece.setPosition(position);		
 		board.placePiece(piece, position);

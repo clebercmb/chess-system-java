@@ -12,6 +12,7 @@ import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
+import chess.pieces.King;
 
 public class UITest {
 
@@ -38,7 +39,7 @@ public class UITest {
 		// Scenario
 		ChessPiece[][] chessPiece = new ChessPiece[8][8];
 		Board board = new Board(8, 8);
-		chessPiece[0][0] = new ChessPiece(board, Color.WHITE);
+		chessPiece[0][0] = new King(board, Color.WHITE);
 		UI ui = new UI();
 		ui.toString();
 
