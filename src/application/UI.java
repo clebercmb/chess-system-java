@@ -37,8 +37,7 @@ public class UI {
 
 			return new ChessPosition(column, row);
 
-		} 
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8.");
 		}
 	}
@@ -67,5 +66,11 @@ public class UI {
 		}
 
 		System.out.print(" ");
+	}
+
+	// https://stackoverflow.com/questions/2979383/java-clear-the-console
+	public static void clearScreen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
 	}
 }
