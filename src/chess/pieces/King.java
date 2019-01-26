@@ -24,7 +24,6 @@ public class King extends ChessPiece {
 		
 		//above
 		p.setValues(position.getRow()-1, position.getColumn());
-		System.out.println("---> " + p);
 		if(  getBoard().positioExists(p) && canMove(p) ) {
 			possibleMoves[p.getRow()][p.getColumn()] = true;
 		}
@@ -77,7 +76,6 @@ public class King extends ChessPiece {
 	
 	private boolean canMove(Position position) {
 		ChessPiece p = (ChessPiece) getBoard().piece(position);
-		System.out.println(">>>>" + p + "-" + position);	
 		return p == null || p.getColor() != getColor();
 	}
 }
