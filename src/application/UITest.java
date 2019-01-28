@@ -39,7 +39,7 @@ public class UITest {
 		// Scenario
 		ChessPiece[][] chessPiece = new ChessPiece[8][8];
 		Board board = new Board(8, 8);
-		chessPiece[0][0] = new King(board, Color.WHITE);
+		chessPiece[0][0] = new King(board, Color.WHITE,  new ChessMatch());
 		UI ui = new UI();
 		ui.toString();
 

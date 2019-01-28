@@ -4,6 +4,7 @@ package boardgame;
 import org.junit.Assert;
 import org.junit.Test;
 
+import chess.ChessMatch;
 import chess.Color;
 import chess.pieces.King;
 
@@ -13,7 +14,7 @@ public class PieceTest {
 	public void testGetBoard() {
 		// Scenario
 		Board board = new Board(7,8);
-		Piece piece = new King(board, Color.BLACK);
+		Piece piece = new King(board, Color.BLACK, new ChessMatch());
 		
 		//Action 
 		String boardString = piece.toString();
@@ -29,7 +30,7 @@ public class PieceTest {
 	@Test
 	public void testGetBoard2() {
 		Board board = new Board(8,8);
-		Piece piece = new King(board, Color.BLACK);
+		Piece piece = new King(board, Color.BLACK, new ChessMatch());
 		
 		//Action
 		Board boardTest = piece.getBoard();
@@ -43,7 +44,7 @@ public class PieceTest {
 	public void testGetPosition() {
 		//Scenario
 		Board board = new Board(8,8);
-		Piece piece = new King(board, Color.BLACK);
+		Piece piece = new King(board, Color.BLACK, new ChessMatch());
 		Position position = new Position (3,4);
 		piece.setPosition(position);		
 		
@@ -59,7 +60,7 @@ public class PieceTest {
 	public void testToString() {
 		// Scenario
 		Board board = new Board(7,8);
-		Piece piece = new King(board, Color.BLACK);
+		Piece piece = new King(board, Color.BLACK, new ChessMatch());
 		
 		//Action 
 		String boardString = piece.toString();
