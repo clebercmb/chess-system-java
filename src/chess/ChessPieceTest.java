@@ -14,7 +14,7 @@ public class ChessPieceTest {
 		//Scenario
 		Board board = new Board(8,8);
 		Color white = Color.WHITE;
-		ChessPiece chessPiece =  new King(board, white);
+		ChessPiece chessPiece =  new King(board, white, new ChessMatch());
 		
 		//Action
 		Color pieceColor  =  chessPiece.getColor();
