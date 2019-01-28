@@ -47,13 +47,22 @@ public class Pawn extends ChessPiece {
 			if (getBoard().positioExists(p) && !getBoard().thereIsAPiece(p) ) {
 				possibleMoves[p.getRow()][p.getColumn()] = true;
 			}
-			
+
+/*			
 			p.setValues(position.getRow() + 2, position.getColumn());
 			Position p2 = new Position (position.getRow() - 1, position.getColumn());
 			if (getBoard().positioExists(p) && !getBoard().thereIsAPiece(p) && getBoard().positioExists(p2) && !getBoard().thereIsAPiece(p2) && getMoveCount() == 0 ) {
 				possibleMoves[p.getRow()][p.getColumn()] = true;
 			}
-
+*/
+			
+			p.setValues(position.getRow() +2, position.getColumn());
+			Position p2 = new Position (position.getRow() + 1, position.getColumn());
+			if (getBoard().positioExists(p) && !getBoard().thereIsAPiece(p) && getBoard().positioExists(p2) && !getBoard().thereIsAPiece(p2) && getMoveCount() == 0 ) {
+				possibleMoves[p.getRow()][p.getColumn()] = true;
+			}
+		
+			
 			p.setValues(position.getRow() + 1, position.getColumn()-1);
 			if (getBoard().positioExists(p) && isThereOpponentPiece(p) ) {
 				possibleMoves[p.getRow()][p.getColumn()] = true;
