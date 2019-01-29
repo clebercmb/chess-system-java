@@ -2,8 +2,7 @@ package chess;
 import org.junit.Assert;
 import org.junit.Test;
 
-import application.UI;
-import boardgame.BoardException;
+
 
 public class ChessMatchTest {
 
